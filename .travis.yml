@@ -17,8 +17,8 @@ before_install:
   - pwd
   - echo $PATH
   - sudo chmod a+x flyway
+  - export PATH=$PATH:/home/travis/build/albertkim/test/flyway
   - export PATH=$PATH:/home/travis/build/albertkim/test/flyway/flyway
-  - sudo export PATH=$PATH:/home/travis/build/albertkim/test/flyway/flyway
   - echo $PATH
   - flyway
   - sudo flyway
