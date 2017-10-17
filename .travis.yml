@@ -1,0 +1,26 @@
+language: node_js
+node_js: "8.1.4"
+services:
+  - mysql
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
+notifications:
+  email: false
+before_install:
+  - mysql -e 'CREATE DATABASE `fetch-api-integration`;'
+  - mkdir flyway
+  - cd flyway
+  - sudo wget https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.0.3/flyway-commandline-4.0.3-linux-x64.tar.gz
+  - sudo tar --strip-components 1 -xzf flyway-commandline-4.0.3-linux-x64.tar.gz
+  - pwd
+  - sudo chmod a+x flyway
+  - export PATH=$PATH:/home
+  - flyway
+  - cd ..
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - sudo python get-pip.py
+  - sudo pip install awscli
+  - # aws configure
+  
