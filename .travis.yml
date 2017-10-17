@@ -16,11 +16,10 @@ before_install:
   - sudo tar --strip-components 1 -xzf flyway-commandline-4.0.3-linux-x64.tar.gz
   - pwd
   - sudo chmod a+x flyway
-  - export PATH=$PATH:/home
+  - export PATH=$PATH:/home/travis/build/albertkim/test/flyway/flyway
   - flyway
   - cd ..
   - curl -O https://bootstrap.pypa.io/get-pip.py
   - sudo python get-pip.py
   - sudo pip install awscli
   - # aws configure
-  
