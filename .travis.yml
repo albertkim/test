@@ -15,9 +15,13 @@ before_install:
   - sudo wget https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.0.3/flyway-commandline-4.0.3-linux-x64.tar.gz
   - sudo tar --strip-components 1 -xzf flyway-commandline-4.0.3-linux-x64.tar.gz
   - pwd
+  - echo $PATH
   - sudo chmod a+x flyway
   - export PATH=$PATH:/home/travis/build/albertkim/test/flyway/flyway
+  - sudo export PATH=$PATH:/home/travis/build/albertkim/test/flyway/flyway
+  - echo $PATH
   - flyway
+  - sudo flyway
   - cd ..
   - curl -O https://bootstrap.pypa.io/get-pip.py
   - sudo python get-pip.py
